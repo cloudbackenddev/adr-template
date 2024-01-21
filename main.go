@@ -94,11 +94,10 @@ func parseADR(adrPath string) (*ADR, error) {
 			metaMap[key] = value
 			//log.Printf("Key %s, Value %s", key, value)
 		}
+	}
 
-		if err := scanner.Err(); err != nil {
-			log.Println("Error reading file ", err)
-		}
-
+	if err := scanner.Err(); err != nil {
+		log.Println("Error reading file ", err)
 	}
 
 	for key, value := range metaMap {
